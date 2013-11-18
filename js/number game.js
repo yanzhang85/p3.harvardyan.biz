@@ -24,6 +24,7 @@
 
 	$('input[name=guess]').bind("enterkey",function(eve){
 		$('#guess').trigger("click");
+		$('#guess_practice').trigger("click");
 	});
 
 	$('input[name=guess]').keyup(function(e){
@@ -59,9 +60,8 @@
 		}
 		//console.log("Picked number:" + guess_array);//
 		// Tabla rasa
-		var number_match_count = 0;
-		var position_match_count = 0;
-		
+		var digit_match_count = position_match_count = 0;
+				
 		// Loop through the numbers in their guess
 		for(i in random_number_array) {
 			
@@ -70,19 +70,19 @@
 					{if (i==j) {
 						position_match_count++;
 					}
-					var number_match = 1;	
+					var i_match = 1;	
 				}
 				
 			}
-			if (number_match){
-				number_match_count++;
-				number_match=0;
+			if (i_match){
+				digit_match_count++;
+				i_match=0;
 			}
 		}
 		
 		// If match_count was 0 you should grey out all the
 		// letters in the alphabet because it means none of them match
-		if(number_match_count == 0) {
+		if(digit_match_count == 0) {
 			for(i in guess_array) {
 				var number = guess_array[i];
 				$('#' + number).css('color','#eee');
@@ -90,7 +90,7 @@
 		}
 		
 		// Print out their guess and how many letters matched
-		$('#guesses').prepend(guess + ' : ' + number_match_count + ' numbers match' + '; ' + position_match_count + ' positions match<br>');
+		$('#guesses').prepend(guess + ' : ' + digit_match_count + ' digits match' + '; ' + position_match_count + ' positions match<br>');
 		
 		trial_times++;
 		if (trial_times>3){
@@ -98,15 +98,15 @@
 			$('.score').html(score);
 		}		
 		// If their match count equals the the length of the computer's word, Winner! 
-		if(number_match_count == 5) {
+		if(digit_match_count == 5) {
 			if (score>=80){
-				$("#results").html('Smart guy! You are a beast! What about playing <a href="/">one more time</a>?');
+				$("#results").html('Smart guy! You are a beast! What about playing <a href="/match_version.php">one more time</a>?');
 			}
 			else if (score>=60 && score<80){
-				$("#results").html('Great! you are right! Do you want to get a higher score on <a href="/">another try</a>?'); 
+				$("#results").html('Great! you are right! Do you want to get a higher score on <a href="/match_version.php">another try</a>?'); 
 			}
 			else {
-				$("#results").html('Cool! you are right! But the score could be better.. <a href="/">Try it again</a>!');
+				$("#results").html('Cool! you are right! But the score could be better.. <a href="/match_version.php">Try it again</a>!');
 			};
 			$("#guess").attr("disabled", "disabled");
 			$("#hint1").attr("disabled", "disabled");
@@ -115,6 +115,62 @@
 
 	});	
 	
+
+	$('#guess_practice').click(function() {
+		
+		// What guess did the player make?
+		var guess = $('input[name=guess]').val();
+		
+		// Break their word into an array; each letter is an element in the array
+		guess_array = guess.split('');
+
+		if (!(guess_array.length ==5)){
+			alert('5-digit numbers, please!');
+			return 1;
+		}
+
+		if (guess_array[0]==0) {
+			alert('The first digit cannot be 0!');
+			return 1;
+		}
+		//console.log("Picked number:" + guess_array);//
+		// Tabla rasa
+		
+		var position_match_count = 0;
+		var result_array = new Array;
+		
+		// Loop through the numbers in their guess
+		for(i in guess_array) {			
+			if (guess_array[i]==random_number_array[i]){
+				result_array[i]='T';
+				position_match_count++;
+			}
+			else { result_array[i]='F';
+			}			
+		}
+		
+		// If match_count was 0 you should grey out all the
+		// letters in the alphabet because it means none of them match
+		
+		
+		// Print out their guess and how many letters matched
+		
+		for(i=4;i>=0;i--){
+			$('#guesses').prepend(result_array[i]);
+		}
+		$('#guesses').prepend(guess + ' -> <br>');
+		$('#guesses').prepend('<br>');
+		
+		// If their match count equals the the length of the computer's word, Winner! 
+		if(position_match_count == 5) {
+			$("#results").html('Cool! you are right! What about trying <a href="/match_version.php">our match version</a>!');
+		
+			$("#guess_easy").attr("disabled", "disabled");
+			$("#hint1").attr("disabled", "disabled");
+			$("#hint2").attr("disabled", "disabled");
+		}
+
+	});	
 	//hint1 
 		
 	$('#hint1').one('click',function(){
@@ -150,3 +206,5 @@
 		score -=15;
 		$('.score').html(score);
 	});
+
+	
