@@ -23,16 +23,39 @@
 		The order of the letters is irrelevant.<br>
 		
 		<br>
-		<input type='text' name='guess' maxlength=5> <button>Submit Guess</button>
+		Take a guess:<input type='text' name='guess' onkeypress="if (isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength ="8"/>
+		<button id='guess'>Submit</button>
+		<div id='error'></div>
 		
 		<div id='results'></div>
 		
 		<div id='number'></div>
 
 		Scratchpad:<br>
-		<textarea></textarea>
+		<textarea></textarea><br>
+
+		
+		<div class = 'hint1'> Show me how many digits with the same number?
+			<button id='hint1'> Hint1 </button><br>
+			<div id='result_hint1'></div>
+		</div>
+
+		<div class = 'hint2'>Which digit do you want to know? 
+			<select name='digit'> 
+				<option value='0'>First</option>
+				<option value='1'>Second</option>
+				<option value='2'>Third</option>
+				<option value='3'>Fourth</option>
+				<option value='4'>Fifth</option>
+			</select>
+			<button id='hint2'> Hint2 </button><br>
+			<div id='result_hint2'></div>
+		</div>
+		
 		
 		<div id='guesses'></div>
+
+		<div class='score'><div>
 			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>

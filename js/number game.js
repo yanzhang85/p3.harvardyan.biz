@@ -9,27 +9,54 @@
 	
 	// get rabdom number array
 	var random_number_array = new Array;
-		for (var j=0;j<5;j++){
+	    random_number_array[0] = Math.floor((Math.random()*9)+1);
+		for (var j=1;j<5;j++){
 			random_number_array[j] = Math.floor((Math.random()*9)+0);
 		}
 		
 	console.log("Computer's number:" + random_number_array);
 
+	var score=100;
+	$('.score').html(score);
+
+	var trial_times=0;
+
+
+	$('input[name=guess]').bind("enterkey",function(eve){
+		$('#guess').trigger("click");
+	});
+
+	$('input[name=guess]').keyup(function(e){
+		if(e.keyCode == 13){
+			$(this).trigger("enterkey");
+		}
+		var value = $(this).val();
+		var how_many_digits = value.length;
+		if (how_many_digits >5) {
+			$('#error').html('5 digits only');
+		}	else {
+				$('#error').html('');
+			}
+	});
 	
 	// Play! 
-	$('button').click(function() {
+	$('#guess').click(function() {
 		
 		// What guess did the player make?
 		var guess = $('input[name=guess]').val();
-
+		
 		// Break their word into an array; each letter is an element in the array
 		guess_array = guess.split('');
 
-		if (guess_array.length <5){
-			alert('5 digits are required!');
+		if (!(guess_array.length ==5)){
+			alert('5-digit numbers, please!');
 			return 1;
 		}
-		
+
+		if (guess_array[0]==0) {
+			alert('The first digit cannot be 0!');
+			return 1;
+		}
 		//console.log("Picked number:" + guess_array);//
 		// Tabla rasa
 		var number_match_count = 0;
@@ -64,10 +91,62 @@
 		
 		// Print out their guess and how many letters matched
 		$('#guesses').prepend(guess + ' : ' + number_match_count + ' numbers match' + '; ' + position_match_count + ' positions match<br>');
-				
+		
+		trial_times++;
+		if (trial_times>3){
+			score -=5;
+			$('.score').html(score);
+		}		
 		// If their match count equals the the length of the computer's word, Winner! 
 		if(number_match_count == 5) {
-			$("#results").html('You guessed the number correctly!');
+			if (score>=80){
+				$("#results").html('Smart guy! You are a beast! What about playing <a href="/">one more time</a>?');
+			}
+			else if (score>=60 && score<80){
+				$("#results").html('Great! you are right! Do you want to get a higher score on <a href="/">another try</a>?'); 
+			}
+			else {
+				$("#results").html('Cool! you are right! But the score could be better.. <a href="/">Try it again</a>!');
+			};
+			$("#guess").attr("disabled", "disabled");
+			$("#hint1").attr("disabled", "disabled");
+			$("#hint2").attr("disabled", "disabled");
 		}
+
+	});	
+	
+	//hint1 
 		
+	$('#hint1').one('click',function(){
+		var same_digit_times = same_i_times = 0;
+		for (i=0;i<4;i++){
+			for (j=i;j<5;j++){
+				if (random_number_array[i] == random_number_array[j]) {
+				same_i_times++;
+				}
+			}
+			if (same_i_times > same_digit_times){
+				same_digit_times = same_i_times
+			}
+			same_i_times = 0;
+		}
+		if (same_digit_times == 1){
+		$("#result_hint1").html('There is no digit with the same number!');	
+		}
+		else { $("#result_hint1").html('There are ' +  same_digit_times  + ' digits with the same number!');
+		}
+		$('#hint1').css('color','#bbaaaa');
+		score -=10;
+		$('.score').html(score);
+	});
+
+
+	//hint2
+	$('#hint2').one('click',function(){
+		var digit = $('select[name=digit]').val();
+
+		$("#result_hint2").html('The number is ' + random_number_array[digit]);
+		$('#hint2').css('color','#bbaaaa');
+		score -=15;
+		$('.score').html(score);
 	});
