@@ -1,8 +1,89 @@
-h1 {
-	font-size:1.5em;
+body {
+	font-family: Helvetica,sans-serif, arial;
+	background: #efefef;
 }
 
-body,input,select {
+
+
+h1 {
+	font-family: Serif, Helvetica;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2.5em;
+	text-shadow: 1px 1px 2px #fff;
+	margin: 0em 5em 1em 5em;
+	text-align: center;
+	text-transform: uppercase;
+	color: blue;
+	border-bottom: 1px solid black;
+	border-bottom-right-radius:2em;
+	border-bottom-left-radius:2em;
+}
+
+h3 {
+	color: #000;
+	font-family: Serif, Helvetica;
+	font-size: 2em;
+	font-weight: 700;
+	text-shadow: 1px 1px 2px #fff;
+	text-align: center;
+}
+h4 {
+	color:black;
+	font-size: 1.5em;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: .2em;
+	margin :1em auto;
+	text-align: left;
+	text-shadow: 1px 1px 1px #fff;
+	width: 100%;
+}
+
+ul li {
+	font-family: serif,Helvetica;
+	font-size: 1.5em;
+	letter-spacing: .1em;
+}
+
+
+table[name="version"] {
+	margin:auto;
+	height: 10px;
+	width:40%;
+	text-align:center;
+	padding:5px;
+	vertical-align:center;
+	table-layout:fixed;
+	border: 2px solid grey;
+	border-radius:15px;
+	border-spacing: 5px;
+}
+
+.index_table {
+	font-family: Helvetica,Serif;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+footer {
+        
+        background: #111;
+        position: fixed;
+        color:white;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+}
+
+footer a:link,
+footer a:visited
+{
+	color: #efefef;
+}
+
+input,select {
 	font-size:1.5em;
 	font-family:consolas;
 }

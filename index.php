@@ -8,12 +8,32 @@
 	</head>
 
 	<body>
-		<a href="/match_version.php">match</a> 
-		<h1>Word Game</h1>
-		The computer has chosen a random 5 letter noun.<br>
-		Try and guess what that word is in as few guesses as possible.<br>
-		For every guess you make, the computer will tell you how many letters in your word match the computer's word.<br>
-		The order of the letters is irrelevant.<br>
+		<h1>Guess my number</h1>
+		<div id="rules">
+			<h4> How to play: </h4>
+			<ul>
+				<li>The Funbrian will pick a secret number from 10000 to 99999.</li>
+				<li>You guess what number it is.</li>
+				<li>If your guess is not correct, FunBrain will give you hints.</li>
+				<li>See how many turns it takes you to win!</li>
+			</ul>
+		</div>
+	
+		<div>
+			<h3>Pick a Level</h3>
+			<table name= "version">
+				<tr>
+					<td>
+						<p class="index_table"><a href="/practice_version.php">Practice</a><br>
+							<span> (Get familiar with rules)</span></p>
+					</td>
+					<td>
+						<p class="index_table"><a href="/match_version.php">Match</a><br>
+						   <span> (Score mode)</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</body>
 
 	<footer>
