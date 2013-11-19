@@ -41,7 +41,7 @@
 	});
 	
 	// Play! 
-	$('#guess').click(function() {
+	$('#guess_match').click(function() {
 		
 		// What guess did the player make?
 		var guess = $('input[name=guess]').val();
@@ -156,9 +156,9 @@
 		// Print out their guess and how many letters matched
 		
 		for(i=4;i>=0;i--){
-			$('#guesses').prepend(result_array[i]);
+			$('#guesses').prepend(' ' + result_array[i]);
 		}
-		$('#guesses').prepend(guess + ' -> <br>');
+		$('#guesses').prepend(guess + ' -> ');
 		$('#guesses').prepend('<br>');
 		
 		// If their match count equals the the length of the computer's word, Winner! 

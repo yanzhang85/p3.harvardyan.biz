@@ -2,14 +2,14 @@
 <html>
 	<head>
 
-		<title>Word Game</title>
+		<title>Guess my number</title>
 		<link rel="stylesheet" href="/css/main.css" type="text/css">
 		
 	</head>
 
 	<body>
 		<h1>Guess my number</h1>
-		<div id="rules">
+		<div>
 			<h4> How to play: </h4>
 			<ul>
 				<li>The Funbrian will pick a secret number from 10000 to 99999.</li>

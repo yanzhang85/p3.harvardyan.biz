@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>Word Game</title>
+		<title>Guess my number_match</title>
 		<link rel="stylesheet" href="/css/main.css" type="text/css">
 		
 	</head>
@@ -17,7 +17,7 @@
 		
 		<br>
 		Take a guess:<input type='text' name='guess' onkeypress="if (isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength ="8"/>
-		<button id='guess'>Submit</button>
+		<button id='guess_match'>Guess</button>
 		<div id='error'></div>
 		
 		<div id='results'></div>
@@ -52,7 +52,7 @@
 			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-		<script src="/js/number game.js"></script>
+		<script src="/js/number_game.js"></script>
 
 	</body>
 </html>
