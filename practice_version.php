@@ -19,11 +19,12 @@
 		<div id="change_version">Ready for <a href="/match_version.php">a match</a>? </div>
 		<h2> (Practice Version) </h2>
 		
-		<div>
+		<div id="features">
 			<h4> Features: </h4>
 			<ul>
 				<li>Unlimited times of guesses</li>
-				<li>Show whether each position is right or not after each guess ("T":ture, "F":False)</li>
+				<li>Show whether each position is right or not after each guess ("T": ture, "F": False)</li>
+				<li>Grey out the numbers if your guess does not match every position of the answer</li>
 			</ul>
 		</div>
 		<div id='results'></div>
@@ -33,8 +34,7 @@
 			<button id='guess_practice'>Guess</button>
 			<div id='error'></div>
 		
-		
-			<p id="scratchpad">Scratchpad:<br>
+			<p> Scratchpad:<br>
 				<textarea></textarea><br>
 			</p>
 		</div>
@@ -46,7 +46,10 @@
 		</div>
 
 		<div id='results'></div>
-			
+
+		<p id='hint'>Available choices</p> 
+		<div id='number'></div>
+					
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script src="/js/number_game.js"></script>

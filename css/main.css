@@ -65,7 +65,7 @@ table[name="version"] {
 	padding:5px;
 	vertical-align:center;
 	table-layout:fixed;
-	border: 2px solid grey;
+	border: 2px solid gray;
 	border-radius:15px;
 	border-spacing: 5px;
 }
@@ -92,11 +92,17 @@ footer a:visited
 {
 	color: #efefef;
 }
+
+a:link,
+a:visited 
+{
+	color: blue;
+}
 /* practice_version.php */
 #change_version {
 	float:right;
-	width:9%;
-	font-size: 1.5em;
+	width:8%;
+	font-size: 1.3em;
 	text-align:center;
 	padding:10px;
 	vertical-align:center;
@@ -105,11 +111,15 @@ footer a:visited
 	margin-right: 40px;
 }
 
+#features{
+	border-bottom:1px dotted gray;
+	margin-bottom: 10px;
+}
 #take_guess {
-	margin-top:60px;
+	margin-top:70px;
 	position: absolute;
 	font-family: Helvetica,Serif;
-	margin-left: 100px;
+	margin-left: 60px;
 	font-size: 1.2em;
 }
 
@@ -127,21 +137,21 @@ footer a:visited
 	margin-top:60px;
 	position: absolute;
 	font-family: Helvetica,Serif;
-	margin-left: 550px;
+	margin-left: 500px;
 	font-size: 1.2em;
 	border:2px solid blue;
-	padding:20px 50px 70px 20px;
+	padding:20px 20px 70px 20px;
 
 }
 #guesses {
 
-	margin-left: 40px;
+	margin-left: 30px;
 	line-height: 150%;
 }
 
 #results{
 	position: absolute;
-	margin-left:200px;
+	margin-left:190px;
 	font-family: Serif, Helvetica;
 	font-style: italic;
 	font-weight: bold;
@@ -150,9 +160,68 @@ footer a:visited
 	color: #9400D3;
 }
 
-button {
-	font-size:1em;
+.number {
+	display:inline-block;
+	padding:5px;
+	border:1px solid gray;
+	font-family: Helvetica,Serif;
+	font-size: 1.6em;
 }
+
+#number {
+	margin:70px 10px 0px 940px;
+	position: absolute;
+	padding:10px 0px 10px 10px;
+}
+
+
+
+/* match_version */
+.hint {
+	margin:55px 10px 0px 940px;
+	position: absolute;
+	font-family: Helvetica,Serif;
+	font-size: 1.2em;
+	border:2px solid gray;
+	padding:10px 0px 10px 10px;
+	line-height: 150%;
+	padding-bottom: 30px;
+
+}
+
+#hint{
+	position: absolute;
+	margin-left: 940px;
+	font-family: Helvetica,Serif;
+	font-size: 1.3em;
+	color:#0059FF;
+}
+
+#result_hint1,
+#result_hint2
+{
+	margin-top:5px;
+	font-family: Helvetica,Serif;
+	color: #800000;
+	font-size: 1em;
+}
+
+.score{
+	
+	position: absolute;
+	border:2px solid gray;
+	color:#0059FF;
+	font-family: Helvetica,Serif;
+	font-size: 2.5em;
+	width:65px;
+	margin-left: 25px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+
+/* button, input*/
 
 input[type=text] {
 	font-family: Helvetica,Serif;
@@ -167,17 +236,11 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.number {
-	display:inline-block;
-	padding:3px;
-}
-
-
 
 button {
 	border:1px solid #ccc;
 	background-color:#eee;
-	
+	font-size:1em;
 }
 button:hover {
 	background-color:#dfdfdf;

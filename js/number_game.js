@@ -5,6 +5,9 @@
     	
     	// Put each number in a span so we can color it later
 		$('#number').append('<span class="number" id="'+i+'">'+i+'</span>');
+		if ((i+1)%5 ==0){
+			$('#number').append('<br>');
+		}
 	}
 	
 	// get rabdom number array
@@ -80,15 +83,6 @@
 			}
 		}
 		
-		// If match_count was 0 you should grey out all the
-		// letters in the alphabet because it means none of them match
-		if(digit_match_count == 0) {
-			for(i in guess_array) {
-				var number = guess_array[i];
-				$('#' + number).css('color','#eee');
-			}
-		}
-		
 		// Print out their guess and how many letters matched
 		$('#guesses').prepend(guess + ' : ' + digit_match_count + ' digits match' + '; ' + position_match_count + ' positions match<br>');
 		
@@ -151,6 +145,12 @@
 		
 		// If match_count was 0 you should grey out all the
 		// letters in the alphabet because it means none of them match
+		if(position_match_count == 0) {
+			for(i in guess_array) {
+				var number = guess_array[i];
+				$('#' + number).css('color','#eee');
+			}
+		}
 		
 		
 		// Print out their guess and how many letters matched
@@ -189,7 +189,7 @@
 		if (same_digit_times == 1){
 		$("#result_hint1").html('There is no digit with the same number!');	
 		}
-		else { $("#result_hint1").html('There are ' +  same_digit_times  + ' digits with the same number!');
+		else { $("#result_hint1").html('There are ' +  same_digit_times  + ' digits with the same number.');
 		}
 		$('#hint1').css('color','#bbaaaa');
 		score -=10;
@@ -201,7 +201,7 @@
 	$('#hint2').one('click',function(){
 		var digit = $('select[name=digit]').val();
 
-		$("#result_hint2").html('The number is ' + random_number_array[digit]);
+		$("#result_hint2").html('The number is ' + random_number_array[digit] + '.');
 		$('#hint2').css('color','#bbaaaa');
 		score -=15;
 		$('.score').html(score);
