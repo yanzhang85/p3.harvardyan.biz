@@ -24,7 +24,7 @@
 			<ul>
 				<li>Unlimited times of guesses</li>
 				<li>Show whether every position is correct or not after every guess ("T": ture, "F": False)</li>
-				<li>One hint available: Grey out your guessed numbers that are not in the answer if none of the positions is correct</li>
+				<li>One hint available: grey out your guessed numbers that are not in the answer if none of the positions is correct</li>
 			</ul>
 		</div>
 		<div id='results'></div>
