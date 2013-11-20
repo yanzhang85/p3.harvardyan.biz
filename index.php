@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
+		<meta charset="UTF-8">
 		<title>Guess my number</title>
 		<link rel="stylesheet" href="/css/main.css" type="text/css">
-		
+				
 	</head>
 
 	<body>
