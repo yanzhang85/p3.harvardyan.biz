@@ -45,8 +45,6 @@
 			<div id='guesses'></div>
 		</div>
 
-		<div id='results'></div>
-
 		<p id='hint'>Available choices</p> 
 		<div id='number'></div>
 					
