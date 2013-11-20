@@ -23,8 +23,8 @@
 			<h4> Features: </h4>
 			<ul>
 				<li>Unlimited times of guesses</li>
-				<li>Show whether each position is right or not after each guess ("T": ture, "F": False)</li>
-				<li>Grey out the numbers if your guess does not match every position of the answer</li>
+				<li>Show whether every position is correct or not after every guess ("T": ture, "F": False)</li>
+				<li>One hint available: Grey out your guessed numbers that are not in the answer if none of the positions is correct</li>
 			</ul>
 		</div>
 		<div id='results'></div>

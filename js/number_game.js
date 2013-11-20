@@ -157,12 +157,20 @@ $('#guess_practice').click(function() {
 		}			
 	}
 	
-	// If match_count was 0 you should grey out all the
-	// letters in the alphabet because it means none of them match
+	// If position_match_count is 0 
+	// grey out the numbers that are not in the answer
 	if(position_match_count == 0) {
 		for(i in guess_array) {
 			var number = guess_array[i];
-			$('#' + number).css('color','#eee');
+			for (j=0;j<5;j++){
+				if (number == random_number_array[j]){
+					var number_included =1;
+				}
+			}
+			if (!number_included){
+				$('#' + number).css('color','#eee');
+			}
+			number_included =0;
 		}
 	}
 	
@@ -177,7 +185,7 @@ $('#guess_practice').click(function() {
 	
 	// If their match count equals the the length of the computer's word, Winner! 
 	if(position_match_count == 5) {
-		$("#results").html('Cool! you are right! You are ready for <a href="/match_version.php">our match version</a>!');
+		$("#results").html('Correct! You are ready for <a href="/match_version.php">our match version</a>!');
 		// disable the button
 		$("#guess_easy").attr("disabled", "disabled");
 	}
