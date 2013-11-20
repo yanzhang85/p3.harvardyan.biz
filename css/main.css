@@ -58,7 +58,7 @@ ul li {
 }
 
 
-table[name="version"] {
+.version{
 	margin:auto;
 	height: 10px;
 	width:40%;

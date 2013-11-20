@@ -21,7 +21,7 @@
 	
 		<div>
 			<h3>Pick a Level</h3>
-			<table name= "version">
+			<table class= "version">
 				<tr>
 					<td>
 						<p class="index_table"><a href="/practice_version.php">Practice</a><br>
@@ -34,13 +34,12 @@
 				</tr>
 			</table>
 		</div>
+		<footer>
+			<div>
+	            <p>Yan Zhang<br>
+	            <a href="mailto:yanzhang01@g.harvard.edu">yanzhang01@g.harvard.edu</a>
+	            </p>
+	        </div>
+		</footer>
 	</body>
-
-	<footer>
-		<div>
-            <p>Yan Zhang<br>
-            <a href="mailto:yanzhang01@g.harvard.edu">yanzhang01@g.harvard.edu</a>
-            </p>
-        </div>
-	</footer>
 </html>

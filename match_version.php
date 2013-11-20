@@ -26,7 +26,7 @@
 			<ul>
 				<li>Score mode -- A possible highest score: "100"</li>
 				<li>Show how many digits and positions the guess matches the answer</li>
-				<li>Five pointes deducted for every additional try after first five guesses</li>
+				<li>Five points deducted for every additional try after first five guesses</li>
 				<li>Two additional hints available</li>
 			</ul>
 		</div>
@@ -34,7 +34,7 @@
 		<div id='results'></div>
 		<div id="take_guess">
 			Pick a number <br>between 10000 and 99999: <br>
-			<input type='text' name='guess' onkeypress="if (isNaN( String.fromCharCode(event.keyCode) )) return false;" maxlength ="8"/>
+			<input type='text' name='guess' onkeypress="if (isNaN(String.fromCharCode(event.keyCode) )) return false;" maxlength ="8"/>
 			<button id='guess_match'>Guess</button>
 			<div id='error'></div>
 			<p> Scratchpad:<br>
@@ -49,7 +49,7 @@
 			<div id='guesses'></div>
 		</div>
 		
-		<p id='hint'>Hints (avaiable for one time only)</p> 
+		<p id='hint'>Hints (available for one time only)</p> 
 		<div class='hint'>
 			<div class = 'hint1'> Hint 1 (10 points deducted): <br>How many digits with the same number? <br>
 				<button id='hint1'> Submit </button><br>
